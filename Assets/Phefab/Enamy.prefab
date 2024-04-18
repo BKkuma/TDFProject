@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4821375966849435864}
   - component: {fileID: 4275143164656416252}
   - component: {fileID: 2656297349507884378}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enamy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
