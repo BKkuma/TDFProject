@@ -27,6 +27,7 @@ public class EnamyMovement : MonoBehaviour
 
             if (pathIndex >= LevelManager.main.path.Length)
             {
+                EnamySpawner.onEnamyDestroy.Invoke();
                 Destroy(gameObject);
                 return;
             }
