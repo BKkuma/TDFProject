@@ -8,13 +8,16 @@ public class Turet : MonoBehaviour
     [Header("References")]
     [SerializeField] private Transform turetRotationPoint;
     [SerializeField] private LayerMask enamyMask;
+    [SerializeField] private GameObject bulletpheFab;
+    [SerializeField] private Transform firingPoint;
 
     [Header("Attributes")]
     [SerializeField] private float targetingRange = 5.0f;
     [SerializeField] private float rotationSpeed = 100.0f;
+    [SerializeField] private float bps = 1f; 
 
     private Transform target;
-
+    private float timeUntilFire;
     private void Update()
     {
         if (target == null)
@@ -28,6 +31,23 @@ public class Turet : MonoBehaviour
         {
             target = null;
         }
+        else
+        {
+            timeUntilFire += Time.deltaTime;
+
+            if (timeUntilFire >= 1 / bps )
+            {
+                Shoot();
+                timeUntilFire = 0f;
+            }
+        }
+    }
+
+    private void Shoot()
+    {
+        GameObject bulletObj = Instantiate(bulletpheFab, firingPoint.position, Quaternion.identity);
+        Bullet bulletScript = bulletObj.GetComponent<Bullet>();
+        bulletScript.SetTarget(target);
     }
 
     private void FindTarget()
