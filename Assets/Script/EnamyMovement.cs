@@ -12,9 +12,12 @@ public class EnamyMovement : MonoBehaviour
 
     private Transform tartget;
     private int pathIndex = 0;
+
+    private float baseSpeed;
     // Start is called before the first frame update
     void Start()
     {
+        baseSpeed = moveSpeed;
         tartget = LevelManager.main.path[pathIndex];
     }
 
@@ -43,5 +46,15 @@ public class EnamyMovement : MonoBehaviour
         Vector2 direction = (tartget.position - transform.position).normalized;
 
         rb.velocity = direction * moveSpeed;
+    }
+
+    public void UpdateSpeed(float newSpeed)
+    {
+        moveSpeed = newSpeed;
+    }
+
+    public void ResetSpeed()
+    {
+        moveSpeed = baseSpeed;
     }
 }

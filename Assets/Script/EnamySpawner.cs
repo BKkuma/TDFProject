@@ -15,16 +15,19 @@ public class EnamySpawner : MonoBehaviour
     [SerializeField] private float enamyPersecond = 0.5f;
     [SerializeField] private float timeBetweenWave = 5f;
     [SerializeField] private float difficultyScalingFactor = 0.75f;
+    [SerializeField] private float enemyPerSecondcup = 15f;
 
     [Header("Events")]
     public static UnityEvent onEnamyDestroy = new UnityEvent();
 
 
-     private int currentWave = 1;
-     private float timeSinceLastSpawn;
-     private int enamyAlive;
-     private  int enamyLeftToSpawn;
-     private bool isSpawning = false;
+    private int currentWave = 1;
+    private float timeSinceLastSpawn;
+    private int enamyAlive;
+    private  int enamyLeftToSpawn;
+    private float eps;
+
+    private bool isSpawning = false;
     private void Awake()
     {
         onEnamyDestroy.AddListener(EnamyDestroyed);
@@ -44,7 +47,7 @@ public class EnamySpawner : MonoBehaviour
         
             timeSinceLastSpawn += Time.deltaTime;
         
-        if (timeSinceLastSpawn >= ( 1f / enamyPersecond ) && enamyLeftToSpawn > 0)
+        if (timeSinceLastSpawn >= ( 1f / eps ) && enamyLeftToSpawn > 0)
         {
             SpawnEnamy();
             enamyLeftToSpawn--;
@@ -60,7 +63,8 @@ public class EnamySpawner : MonoBehaviour
 
     private void SpawnEnamy() 
     {
-        GameObject phefabToSpawn = enamyPhefab[0];
+        int index = Random.Range(0, enamyPhefab.Length);
+        GameObject phefabToSpawn = enamyPhefab[index];
         Instantiate(phefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
     }
     private void EnamyDestroyed()
@@ -80,11 +84,17 @@ public class EnamySpawner : MonoBehaviour
         yield return new WaitForSeconds(timeBetweenWave);
         isSpawning = true;
         enamyLeftToSpawn = EnamyPerWave();
+        eps = EnamyPerSecond();
 
     }
 
     private int EnamyPerWave()
     {
         return Mathf.RoundToInt(baseEnamy * Mathf.Pow(currentWave, difficultyScalingFactor));
+    }
+
+    private float EnamyPerSecond()
+    {
+        return Mathf.Clamp(enamyPersecond * Mathf.Pow(currentWave, difficultyScalingFactor), 0f ,enemyPerSecondcup);
     }
 }

@@ -2676,7 +2676,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Test Turet
+  m_text: 'FreezeTuret
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3041,10 +3043,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enamyPhefab:
   - {fileID: 8766797302902620288, guid: e1cdfb85171afe141aac0b3c58e3b9e7, type: 3}
+  - {fileID: 8766797302902620288, guid: e1cdfb85171afe141aac0b3c58e3b9e7, type: 3}
+  - {fileID: 8766797302902620288, guid: e1cdfb85171afe141aac0b3c58e3b9e7, type: 3}
+  - {fileID: 8766797302902620288, guid: 65496ef97ceb0ae46937196fdf363ee7, type: 3}
   baseEnamy: 8
-  enamyPersecond: 0.5
+  enamyPersecond: 1
   timeBetweenWave: 5
   difficultyScalingFactor: 0.75
+  enemyPerSecondcup: 15
 --- !u!114 &788238512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3061,9 +3067,9 @@ MonoBehaviour:
   - name: Basic Turet
     coust: 100
     phefab: {fileID: 3175293418300147024, guid: 2bc81acdc9c94dd48b123daa42e5e82f, type: 3}
-  - name: Test Turet
+  - name: FreezeTuret
     coust: 150
-    phefab: {fileID: 3175293418300147024, guid: 6e19532e7b50a8a49a77f40d44d47495, type: 3}
+    phefab: {fileID: 7739218530668428751, guid: 6ca0d72923d1b9546a6f80f02cf98de0, type: 3}
 --- !u!1001 &838988043
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4286,7 +4292,7 @@ GameObject:
   - component: {fileID: 1217918806}
   - component: {fileID: 1217918805}
   m_Layer: 5
-  m_Name: Test Turet
+  m_Name: Freeze Turet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
