@@ -21,7 +21,7 @@ public class TuretSlow : MonoBehaviour
 
             if (timeUntilFire >= 1f / aps)
             {
-            Debug.Log("Freeze");
+                
                 FreezeEnemy();
                 timeUntilFire = 0f;
             }

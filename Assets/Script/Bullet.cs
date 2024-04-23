@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
 
     [Header("References")]
-    [SerializeField] private Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     [Header("Attributes")]
     [SerializeField] private float bulletSpeed = 5f;
@@ -35,6 +35,6 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         collision.gameObject.GetComponent<HPEnemy>().TakeDamage(bulletDamage);
-        Destroy(gameObject);
+        Destroy(gameObject);      
     }
 }

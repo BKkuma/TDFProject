@@ -285,5 +285,5 @@ MonoBehaviour:
   bulletpheFab: {fileID: 24609831156236138, guid: cd5d17ececb9bd84a84f2b72052b0c2f, type: 3}
   firingPoint: {fileID: 5085064759597889415}
   targetingRange: 3
-  rotationSpeed: 200
+  rotationSpeed: 100
   bps: 1
