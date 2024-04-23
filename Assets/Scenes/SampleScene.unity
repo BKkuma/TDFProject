@@ -3043,6 +3043,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enamyPhefab:
   - {fileID: 8766797302902620288, guid: e1cdfb85171afe141aac0b3c58e3b9e7, type: 3}
+  - {fileID: 8766797302902620288, guid: e1cdfb85171afe141aac0b3c58e3b9e7, type: 3}
+  - {fileID: 8766797302902620288, guid: e1cdfb85171afe141aac0b3c58e3b9e7, type: 3}
+  - {fileID: 8766797302902620288, guid: 65496ef97ceb0ae46937196fdf363ee7, type: 3}
   baseEnamy: 8
   enamyPersecond: 1
   timeBetweenWave: 5

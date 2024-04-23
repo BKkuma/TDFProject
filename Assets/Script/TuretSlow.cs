@@ -40,7 +40,6 @@ public class TuretSlow : MonoBehaviour
 
                 EnamyMovement em = hit.transform.GetComponent<EnamyMovement>();
                 em.UpdateSpeed(0.5f);
-
                 StartCoroutine(ResetEnemySpeed(em));
             }
         }
